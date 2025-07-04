@@ -19,15 +19,23 @@ class CatBloc extends Bloc<CatEvent, CatState> {
     });
 
     on<SearchData>((event, emit) {
-      List<Cat> filterCats = state.allCats.where((value) {
-        return value.name.toLowerCase().contains(event.text.toLowerCase());
-      }).toList();
+      try {
+        List<Cat> filterCats = state.allCats.where((value) {
+          return value.name.toLowerCase().contains(event.text.toLowerCase());
+        }).toList();
 
-      if (event.text.isEmpty) {
-        emit(state.copyWith(cats: state.allCats));
-      } else {
-        emit(state.copyWith(cats: filterCats));
+        if (event.text.isEmpty) {
+          emit(state.copyWith(cats: state.allCats));
+        } else {
+          emit(state.copyWith(cats: filterCats));
+        }
+      } catch (e) {
+        emit(CatState(isError: true));
       }
+    });
+
+    on<ClearError>((event, emit) {
+      emit(state.copyWith(isError: false));
     });
   }
 }

@@ -18,10 +18,8 @@ class _LandingScreenState extends State<LandingScreen> {
 
   @override
   void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      catBloc = BlocProvider.of<CatBloc>(context);
-      catBloc!.add(LoadData());
-    });
+    catBloc = BlocProvider.of<CatBloc>(context);
+    catBloc!.add(LoadData());
 
     super.initState();
   }
@@ -43,6 +41,15 @@ class _LandingScreenState extends State<LandingScreen> {
                 fit: BoxFit.contain,
               ),
             );
+          }
+          if (state.isError) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Hubo un problema, intente más tarde.'),
+                backgroundColor: Colors.red,
+              ),
+            );
+            catBloc!.add(ClearError());
           }
 
           return SingleChildScrollView(

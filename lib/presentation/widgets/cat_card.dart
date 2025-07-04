@@ -19,12 +19,11 @@ class CatCard extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        // Navigator.pushNamed(context, 'detail', arguments: {'cat': cat});
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => const DetailScreen(),
-            settings: RouteSettings(arguments: {'cat': cat}), // Pass cat object
+            settings: RouteSettings(arguments: {'cat': cat}),
           ),
         );
       },

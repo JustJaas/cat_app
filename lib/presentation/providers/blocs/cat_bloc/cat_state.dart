@@ -28,5 +28,10 @@ class CatState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [cats, allCats, isLoading, isError];
+  List<Object?> get props => [
+        cats,
+        allCats,
+        isLoading,
+        isError,
+      ];
 }

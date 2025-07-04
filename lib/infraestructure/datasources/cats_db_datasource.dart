@@ -10,8 +10,6 @@ class CatsDbDatasource extends CatsDatasource {
     'x-api-key': config.apiKey,
   }));
 
-  List<Cat> catsDb = [];
-
   @override
   Future<List<Cat>> getCats() async {
     try {
