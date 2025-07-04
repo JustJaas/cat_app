@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cats_app/config/app_config.dart';
 import 'package:cats_app/domain/entities/cat.dart';
 import 'package:cats_app/presentation/screens/detail_screen.dart';
 import 'package:cats_app/presentation/widgets/detail_info.dart';
@@ -32,7 +33,7 @@ class CatCard extends StatelessWidget {
         height: 400,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.orange[100],
+          color: AppConfig.instance.colorSecondary,
         ),
         margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Column(
@@ -74,11 +75,11 @@ class CatCard extends StatelessWidget {
                     : Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Icon(
                               Icons.image_not_supported_outlined,
                               size: 300.0,
-                              color: Colors.black,
+                              color: AppConfig.instance.colorLetter,
                             ),
                           ],
                         ),

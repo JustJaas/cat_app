@@ -1,3 +1,4 @@
+import 'package:cats_app/config/app_config.dart';
 import 'package:cats_app/presentation/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,9 @@ class DetailIndicator extends StatelessWidget {
                       height: 12,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: isFilled ? Colors.orange : Colors.grey[300],
+                        color: isFilled
+                            ? AppConfig.instance.colorPrimary
+                            : AppConfig.instance.colorQuaternary,
                       ),
                     ),
                   );

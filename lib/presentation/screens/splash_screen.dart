@@ -1,3 +1,4 @@
+import 'package:cats_app/config/app_config.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:cats_app/presentation/screens/landing_screen.dart';
@@ -29,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: AppConfig.instance.colorPrimary,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -41,10 +42,10 @@ class _SplashScreenState extends State<SplashScreen> {
               fit: BoxFit.contain,
             ),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               'Cargando Cat Breeds...',
               style: TextStyle(
-                  color: Colors.white,
+                  color: AppConfig.instance.colorAppBarLetter,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Pacifico'),

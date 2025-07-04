@@ -1,3 +1,4 @@
+import 'package:cats_app/config/app_config.dart';
 import 'package:flutter/material.dart';
 
 class CatAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -13,16 +14,16 @@ class CatAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         text,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          color: AppConfig.instance.colorAppBarLetter,
           fontSize: 25,
         ),
       ),
-      backgroundColor: Colors.orange,
+      backgroundColor: AppConfig.instance.getColor,
       elevation: 0,
       centerTitle: true,
-      iconTheme: const IconThemeData(color: Colors.white),
+      iconTheme: IconThemeData(color: AppConfig.instance.colorAppBarLetter),
     );
   }
 }

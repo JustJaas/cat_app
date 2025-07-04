@@ -6,9 +6,12 @@ import 'package:dio/dio.dart';
 final config = AppConfig.instance;
 
 class CatsDbDatasource extends CatsDatasource {
-  final dio = Dio(BaseOptions(baseUrl: config.baseUrl, headers: {
-    'x-api-key': config.apiKey,
-  }));
+  final dio = Dio(BaseOptions(
+    baseUrl: config.getBaseUrl,
+    headers: {
+      'x-api-key': config.getApiKey,
+    },
+  ));
 
   @override
   Future<List<Cat>> getCats() async {

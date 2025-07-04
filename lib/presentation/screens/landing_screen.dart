@@ -1,3 +1,4 @@
+import 'package:cats_app/config/app_config.dart';
 import 'package:cats_app/presentation/providers/blocs/cat_bloc/cat_bloc.dart';
 import 'package:cats_app/presentation/widgets/cat_appbar.dart';
 import 'package:cats_app/presentation/widgets/cat_card.dart';
@@ -46,7 +47,7 @@ class _LandingScreenState extends State<LandingScreen> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('Hubo un problema, intente más tarde.'),
-                backgroundColor: Colors.red,
+                backgroundColor: AppConfig.instance.getColorError,
               ),
             );
             catBloc!.add(ClearError());
@@ -78,7 +79,7 @@ class _LandingScreenState extends State<LandingScreen> {
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.grey[600],
+                                  color: AppConfig.instance.getColorTertiary,
                                 ),
                                 textAlign: TextAlign.center,
                               ),

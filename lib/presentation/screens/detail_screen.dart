@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cats_app/config/app_config.dart';
 import 'package:cats_app/domain/entities/cat.dart';
 import 'package:cats_app/presentation/widgets/cat_appbar.dart';
 import 'package:cats_app/presentation/widgets/detail_indicator.dart';
@@ -208,7 +209,7 @@ class _DetailScreenState extends State<DetailScreen>
     return Icon(
       Icons.image_not_supported_outlined,
       size: 300.0,
-      color: Colors.black,
+      color: AppConfig.instance.colorLetter,
     );
   }
 }
