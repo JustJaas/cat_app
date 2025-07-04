@@ -1,13 +1,10 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AppConfig {
-  static final AppConfig _instance = AppConfig._internal();
-
-  factory AppConfig() {
-    return _instance;
-  }
-
   AppConfig._internal();
+
+  static final AppConfig _instance = AppConfig._internal();
+  static AppConfig get instance => _instance;
 
   late String baseUrl;
   late String apiKey;
@@ -21,8 +18,4 @@ class AppConfig {
 
   String get getApiBaseUrl => baseUrl;
   String get getStripeApiKey => apiKey;
-
-  void printConfig() {
-    print('---------------- AppConfig Loaded ----------------');
-  }
 }

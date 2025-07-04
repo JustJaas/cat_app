@@ -3,7 +3,7 @@ import 'package:cats_app/domain/datasources/cats_datasource.dart';
 import 'package:cats_app/domain/entities/cat.dart';
 import 'package:dio/dio.dart';
 
-final config = AppConfig();
+final config = AppConfig.instance;
 
 class CatsDbDatasource extends CatsDatasource {
   final dio = Dio(BaseOptions(baseUrl: config.baseUrl, headers: {
