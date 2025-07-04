@@ -1,4 +1,3 @@
-import 'package:cats_app/domain/entities/cat.dart';
 import 'package:cats_app/presentation/providers/blocs/cat_bloc/cat_bloc.dart';
 import 'package:cats_app/presentation/widgets/cat_appbar.dart';
 import 'package:cats_app/presentation/widgets/cat_card.dart';
@@ -8,12 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class LandingScreen extends StatefulWidget {
-  final List<Cat>? cats;
-
-  const LandingScreen({
-    super.key,
-    this.cats,
-  });
+  const LandingScreen({super.key});
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();

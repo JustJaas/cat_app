@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await AppConfig().initialize();
-  AppConfig().printConfig();
   runApp(const MyApp());
 }
 
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routes: {
-          'home': (context) => const LandingScreen(cats: []),
+          'home': (context) => const LandingScreen(),
           'detail': (context) => const DetailScreen(),
         },
         home: const SplashScreen(),
